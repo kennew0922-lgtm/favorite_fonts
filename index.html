@@ -13,17 +13,6 @@
             color: #eeeeee;
         }
 
-        /* --- 🌸 ヘッダー全体を固定（ここが大事！） --- */
-        .fixed-header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 9999; /* 重なり順を一番上に */
-            background-color: #1a1a1a;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.8);
-        }
-
         /* タイトルバナー（高さ65px） */
         .title-banner {
             background-color: #000000;
@@ -31,6 +20,36 @@
             box-sizing: border-box;
             padding: 15px 20px;
             border-bottom: 1px solid #333;
+        }
+
+         /* ✨ 変更：バナー用のラッパー（画像がはみ出さないように中央に包む） */
+        .banner-container {
+            width: 100%;
+            background-color: #000000; /* 画像の背景を黒にして馴染ませる */
+            text-align: center;       /* 画像を中央揃えにする */
+        }
+
+        /* ✨ 変更：最上部の画像（固定せず、画面幅に合わせて伸縮するだけ） */
+        .top-banner-img {
+            display: block;
+            width: 100%;         /* 画面の横幅いっぱいに広げる */
+            max-width: 900px;    /* テーブルの最大幅と合わせて一体感を出す */
+            height: auto;        /* 縦横比を崩さずに拡大縮小 */
+            margin: 0 auto;      /* 中央揃え */
+        }
+
+        /* --- 🌸 ヘッダー（黒バー＋ナビ）だけを固定！ --- */
+        .fixed-header {
+            position: fixed;
+            /* 💡 魔法のポイント：top: 0 ではなく、初期状態は通常配置、スクロール時に上部に張り付くように設定！ */
+            position: -webkit-sticky; /* サファリ用 */
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9999; /* 重なり順を一番上に */
+            background-color: #1a1a1a;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.8);
         }
 
         .title-banner h1 {
@@ -69,7 +88,7 @@
             max-width: 900px;
             margin: 0 auto;
             /* 🌸 ヘッダーの合計(100px)＋余白分を確保 */
-            padding-top: 120px; 
+            padding-top: 20px; 
             padding-left: 20px;
             padding-right: 20px;
             padding-bottom: 40px;
@@ -108,6 +127,10 @@
     </style>
 </head>
 <body>
+
+        <div class="banner-container">
+        <img src="https://socrarius-tool.com/favorite_fonts/banner1.jpg" alt="socrarius" class="top-banner-img">
+    </div>
 
     <div class="fixed-header">
         <div class="title-banner">
