@@ -136,6 +136,24 @@
             border-left: 4px solid #00f2fe;
             letter-spacing: 2px;
             box-shadow: inset 0 0 10px rgba(0, 242, 254, 0.2);
+
+
+            .secret-link {
+        display: inline-block;
+        cursor: default; 
+        }
+    .secret-link .preview-img {
+        pointer-events: auto; 
+        transition: none;    
+    }
+    
+    /* もしリンクの下線が自動でついちゃう環境なら消しておくわ */
+    .secret-link:hover, .secret-link:active {
+        text-decoration: none;
+    }
+
+
+
     </style>
 </head>
 <body>
@@ -263,8 +281,12 @@
                 </tr>
 
                  <tr>
-                    <td>MT Extra</td>
-                    <td><img src="font20.png" alt="吹き出し" class="preview-img"></td>
+                 <td>MT Extra</td>
+                <td>
+                <a href="example.html" class="secret-link">
+                <img src="font20.png" alt="吹き出し" class="preview-img">
+                </a>
+                </td>
                 </tr>
 
                 </tbody>
