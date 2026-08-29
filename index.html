@@ -138,21 +138,16 @@
             box-shadow: inset 0 0 10px rgba(0, 242, 254, 0.2);
 
 
-/* 🌸 リンクであることを悟らせないためのステルス術式 */
     .secret-link {
         display: inline-block;
-        /* マウスカーソルを通常のポインタ（矢印など）に固定して「リンクっぽさ」を消す */
         cursor: default; 
-        /* もし完全に通常のカーソルにしたければ 'auto' でもOKよ */
     }
 
-    /* ついでに画像自体のホバー効果（拡大や枠線の変化など）を完全に無効化しておくと完璧 */
     .secret-link .preview-img {
-        pointer-events: auto; /* クリック判定だけはしっかり残す */
-        transition: none;     /* 余計なアニメーションは排除！ */
+        pointer-events: auto; 
+        transition: none;     
     }
     
-    /* もしリンクの下線が自動でついちゃう環境なら消しておくわ */
     .secret-link:hover, .secret-link:active {
         text-decoration: none;
     }
