@@ -140,7 +140,7 @@
             margin: 15px 0 15px 0;
             font-size: 14px;
             font-weight: bold;
-            border-left: 4px solid #00f2fe;
+            border-left: 4px solid #00a8ff;
             letter-spacing: 2px;
             box-shadow: inset 0 0 10px rgba(0, 242, 254, 0.2);
         }
@@ -177,6 +177,20 @@
             display: block;
             max-width: 100%;
             height: auto;
+        }
+
+                /* 🌸 嫌味のないメッセージBOX */
+        .intro-box {
+            background: rgba(0, 0, 0, 0.4);            /* 薄い半透明の黒 */
+            border-left: 4px solid #00a8ff;             /* 左側にだけやさしい青いアクセント */
+            border-top: 1px solid rgba(0, 168, 255, 0.2);  /* うっすら細い枠線 */
+            border-right: 1px solid rgba(0, 168, 255, 0.2);
+            border-bottom: 1px solid rgba(0, 168, 255, 0.2);
+            border-radius: 6px;
+            padding: 20px 24px;
+            margin: 20px 0 20px 0;
+            line-height: 1.8;                           /* 文章が読みやすい行間 */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
 
     </style>
@@ -338,32 +352,31 @@
                    <div class="section-title">追加フォントインストール方法</div>
                 </td>
             </tr>
-            &emsp;&emsp;1.配布サイトからダウンロード<br>
+
+        <div class="intro-box">
+            1.配布サイトからダウンロード<br>
             <br>
-            &emsp;&emsp;2.OTFまたはTTFファイルを開く<br>
-            &emsp;&emsp;&nbsp;&nbsp;*txtファイルには利用規約などが記載されていますので必ず読んでください<br>
-            <br>
-            &emsp;<div class="img-box">
+            2.OTFまたはTTFファイルを開く<br>
+            &nbsp;&nbsp;*txtファイルには利用規約などが記載されていますので必ず読んでください<br>
+            <div class="img-box">
             <img src="https://socrarius-tool.com/favorite_fonts/reference1.png">
             </div>
             <br>
-            <br>
-            &emsp;&emsp;3.インストールボタンを押す<br>
-            <br>
-            &emsp;<div class="img-box">
+            3.インストールボタンを押す<br>
+            <div class="img-box">
             <img src="https://socrarius-tool.com/favorite_fonts/reference2.png">
             </div>
             <br>
-            &emsp;&emsp;以上で完了です<br>
+            以上で完了です<br>
             <br>
-            &emsp;&emsp;利用する時はフォントを作成してくれている方々に感謝を忘れないようにしましょう<br>
+            利用する時はフォントを作成してくれている方々に感謝を忘れないようにしましょうね。<br>
             <br>
-            <br>
-            &emsp;&emsp;【参考】<br>
-            &emsp;&emsp;自作のフォントを作りたい方は「モジサク」「FontStruct」などが便利です<br>
-            <br>
-            <br>
+            【参考】<br>
+            自作のフォントを作りたい方は「モジサク」「FontStruct」などが便利です<br>
     </div>
+    </div>
+
+ <br><br>
 
             <style>
             .hidden-door {
@@ -377,22 +390,14 @@
            </style>
 
 <script>
-// 🌸 隠しドアをクリックした時に音を鳴らしてジャンプする魔法
 function openHiddenDoor(event) {
-    // 通常の即時ページ遷移を一旦ストップ
     event.preventDefault();
-    
-    // 音の再生
     const sound = document.getElementById('click-magic');
     if (sound) {
         sound.currentTime = 0; // 頭出し
         sound.play().catch(e => console.log("Audio error:", e));
     }
-    
-    // リンク先のURLを取得
     const targetUrl = event.currentTarget.getAttribute('href');
-    
-    // 音の余韻（0.3秒後）に合わせて真実の扉へジャンプ！
     setTimeout(function() {
         window.location.href = targetUrl;
     }, 2000);
